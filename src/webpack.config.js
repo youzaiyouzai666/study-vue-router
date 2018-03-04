@@ -11,7 +11,7 @@ module.exports = {
       const fullDir = path.join(__dirname, dir);
       const entry = path.join(fullDir, 'app.js');
       if(fs.statSync(fullDir).isDirectory() && fs.existsSync(entry)){
-          entries[dir] = ['es6-promise/auto',entry]
+          entries[dir] = [entry]
       }
       console.log(entries);
       return entries;
@@ -33,8 +33,8 @@ module.exports = {
 
   resolve: {
     alias: {
-      'vue': 'vue/dist/vue.esm.js',
-      'vue-router': path.join(__dirname, '..', 'src')
+      'vue': 'vue/dist/vue.esm.js'
+      // 'vue-router': path.join(__dirname, '..', 'src')
     }
   },
 
